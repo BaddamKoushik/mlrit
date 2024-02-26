@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body> 
+    <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="departments.html" >Departments</a>
+         <a href="training.html">Training & Placements</a>
+         <a href="sports.html">Sports</a>
+         <a href="campus.html">Campus</a>
+         <a href="admisson.html">Admissions</a>
+     </nav>
+    <div style="display: flex;">
+        <div style="padding: 1rem 1rem;">
+        <h3 style="color: brown;"><b>Admission to B.Tech course is done through EAMCET, a common entrance test conducted by the Govt. of Telangana State</b></h3>
+        <p>70% of the seats are allotted for the merit students on basis of their rank in EAMCET. 30% of the seats are under management quota. In addition, diploma holders are admitted into second year B.Tech to the extent of 20% intake based on the merit in ECET, under lateral entry scheme.</p>
+        <h3 style="color: brown;"><b>Admission to M. Tech is based on the merit in GATE and PGECET</b></h3>
+        <p>70% of the seats are allotted for the merit students on basis of their rank in GATE and PGECET. 30% of the seats are under management quota.
+        </p>
+        </div>
+            </div>
+    <div class="form-container">
+        <form id="myForm" onsubmit="validateForm(event)">
+            <h2>For more Admission details:</h2>
+          <label  for="name">Name:</label>
+          <input style="Height:20px;Width:200px" type="text" id="name" name="name" placeholder="Enter your name" required>
+    
+          <label for="email">Email:</label>
+          <input style="Height:20px;Width:200px" type="email" id="email" name="email" placeholder="Enter your email" required>
+          <button style="Height:30px;Width:200px" type="submit">Submit</button>
+        </form>
+      </div>
+      
+      <script src="js/college.js"></script> 
+</body>
+</html>
