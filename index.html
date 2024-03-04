@@ -37,13 +37,13 @@
         <p>+91 99517 16702,+91 94914 65303</p>
         </div>
         <div class="form-container">
-            <form id="myForm" onsubmit="validateForm(event)">
+            <form>
                 <h2>Contact us for more details:</h2>
               <label for="name">Name:</label>
               <input type="text" id="name" name="name" placeholder="Enter your name" required>
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" placeholder="Enter your email" required>
-              <button type="submit">Submit</button>
+              <button type="submit" value="submit" id="submit">Submit</button>
             </form>
           </div>
     </section>
@@ -51,5 +51,43 @@
     </footer>
 
     <script src="js/college.js"></script>
+
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+  import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyADzvCI4Zm_z5GN8604foJI7r-so7Aju7M",
+    authDomain: "mlrit-3a102.firebaseapp.com",
+    databaseURL: "https://mlrit-3a102-default-rtdb.firebaseio.com",
+    projectId: "mlrit-3a102",
+    storageBucket: "mlrit-3a102.appspot.com",
+    messagingSenderId: "303630670638",
+    appId: "1:303630670638:web:69520b6a73a7fceeb3f8bf"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const db = getDatabase(app);
+
+  document.getElementById("submit").addEventListener('click', function(e){
+    e.preventDefault();
+    set(ref(db, 'user/' + document.getElementById("name").value),
+    {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+    });
+    alert("success!");
+  })
+
+
+    </script>
 </body>
 </html>
